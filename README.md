@@ -7,6 +7,11 @@ http://developer.helpscout.net/help-desk-api/
 
 http://developer.helpscout.net/docs-api/articles/create/
 
-`Note`: This script is still under progress. 
+How to use this script:
 
-If you are using this script, please do required changes in script (e.g database login details, table name).
+1. Just download https://github.com/rtCamp/WordPress-to-Helpscout-pages-migration/blob/master/wordpress-to-helpscout-pages-migration.php file.
+2. Do require changes in script (e.g database login details, table name).
+3. Place this file under your WordPress installation.
+4. run `php wordpress-to-helpscout-pages-migration.php`
+
+`Note`: This script is still under progress.
