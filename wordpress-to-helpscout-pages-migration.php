@@ -65,14 +65,14 @@ function doPost( $page_data, $i = 0 ) {
 
 	$response = curl_exec($ch);
 
-	if ( ! empty( $response ) ) {
-		echo "\n" . 'Imported -> ' . $i . ' -> ' . $page_data[ $i ]['id'] . "\n";
+	sleep( 60 );
 
-		$i++;
+	echo "\n" . 'Imported -> ' . $i . ' -> ' . $page_data[ $i ]['id'] . "\n";
 
-		if ( isset( $page_data[ $i ] ) ) {
-			doPost( $page_data, $i );
-		}
+	$i++;
+
+	if ( isset( $page_data[ $i ] ) ) {
+		doPost( $page_data, $i );
 	}
 }
 
