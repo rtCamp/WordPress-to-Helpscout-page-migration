@@ -32,7 +32,7 @@ while( $row = mysqli_fetch_assoc( $result ) ) {
 
 function doPost( $page_data, $i = 0 ) {
 	$page_array = json_encode( array(
-		"collectionId" => "57fcc1c5c697911f2d3249fa",
+		"collectionId" => "xxxxxxxxxxxxx",
 		"status"       => "published",
 		"slug"         => $page_data[ $i ]['slug'],
 		"name"         => $page_data[ $i ]['name'],
@@ -52,7 +52,7 @@ function doPost( $page_data, $i = 0 ) {
 		CURLOPT_HTTPHEADER     => $httpHeaders,
 		CURLOPT_POSTFIELDS     => $page_array,
 		CURLOPT_HTTPAUTH       => CURLAUTH_BASIC,
-		CURLOPT_USERPWD        => '52390015c463ea23739b25c8f2b750001202778e' . ':X',
+		CURLOPT_USERPWD        => 'xxxxxxxxxxxxxxxxxxxxxxx' . ':X',
 		CURLOPT_RETURNTRANSFER => true,
 		CURLOPT_TIMEOUT        => 30,
 		CURLOPT_CONNECTTIMEOUT => 0,
