@@ -26,7 +26,7 @@ while( $row = mysqli_fetch_assoc( $result ) ) {
 		'id'   => $row['ID'],
 		'slug' => $row['post_name'],
 		'name' => $row['post_title'],
-		'text' => $row['post_content'],
+		'text' => utf8_encode($row['post_content']),
 	);
 }
 
@@ -65,7 +65,7 @@ function doPost( $page_data, $i = 0 ) {
 
 	$response = curl_exec($ch);
 
-	sleep( 60 );
+	sleep( 10 );
 
 	echo "\n" . 'Imported -> ' . $i . ' -> ' . $page_data[ $i ]['id'] . "\n";
 
