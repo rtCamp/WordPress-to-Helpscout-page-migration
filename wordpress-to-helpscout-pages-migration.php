@@ -21,7 +21,21 @@ if ( ! $result ) {
 	die( 'Could not get data: ' . mysqli_error( $conn ) );
 }
 
+$count = 1;
 while( $row = mysqli_fetch_assoc( $result ) ) {
+	/**
+	 * Uncomment the following code if you have multiple posts with the same name
+	 * Helpscout doesn't add the article with the same name
+	 *
+	 * Following lines make the post name unique by appending the number to the title
+	 */
+	//$unique = array();
+	//if ( isset($unique[ $row['post_name'] ] ) ) {
+	//	$row['post_name'] = $row['post_name'] . ' ' . $count;
+	//	$count++;
+	//}
+	//$unique[ $row['post_name'] ] = 'present';
+
 	$page_data[] = array(
 		'id'   => $row['ID'],
 		'slug' => $row['post_name'],
