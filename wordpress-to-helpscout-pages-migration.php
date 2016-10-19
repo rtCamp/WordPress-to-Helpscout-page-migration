@@ -24,10 +24,10 @@ if ( ! $result ) {
 $count = 1;
 while( $row = mysqli_fetch_assoc( $result ) ) {
 	/**
-	 * Uncomment the following code if you have multiple posts with the same name
-	 * Helpscout doesn't add the article with the same name
+	 * Uncomment the following code if you have multiple pages with the same name
+	 * Helpscout doesn't add the article with the duplicate name
 	 *
-	 * Following lines make the post name unique by appending the number to the title
+	 * Following lines make the page name unique by appending the number to the title
 	 */
 	//$unique = array();
 	//if ( isset($unique[ $row['post_name'] ] ) ) {
@@ -49,8 +49,8 @@ function doPost( $page_data, $i = 0 ) {
 		"collectionId" => "xxxxxxxxxxxxx",
 		"status"       => "published",
 		"slug"         => $page_data[ $i ]['slug'],
-		"name"         => $page_data[ $i ]['name'],
-		"text"         => $page_data[ $i ]['text']
+		"name"         => ucwords(str_replace( '-', ' ', $page_data[ $i ]['slug'])),
+                "text"         => ( "" == $page_data[ $i ]['text'] )? 'Coming soon' : $page_data[ $i ]['text']
 	) );
 
 	$httpHeaders   = array();
